@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* To use poppins font */
+/* font-family: "Poppins", serif; */
+
+.navbar {
+  /* Sets the font to Poppins. If Poppins isn't available, it falls
+     back to the default sans-serif font. */
+  font-family: "Poppins", sans-serif;
+  /* Specifies the font size for the text inside the navbar. */
+  font-size: 17px;
+
+  /* Defines the height of each line of text, creating vertical
+   spacing between lines. */
+  line-height: 26px;
+
+  text-transform: uppercase;
+
+  /* 
+Adds a shadow effect below the navbar:
+0: No horizontal shadow offset.
+8px: Vertical shadow offset, creating a shadow below the element.
+6px: Blur radius, controlling how soft the shadow edges appear.
+-6px: Spread radius, pulling the shadow inwards slightly.
+gray: The shadow color. */
+  box-shadow: 0 8px 6px -6px gray;
+  /* Provides compatibility for older versions of WebKit browsers like Safari. */
+  --webkit-box-shadow: 0 8px 6px -6px gray;
+  /* Adds a solid gray border at the bottom of the navbar.
+The !important ensures this style is not overridden by other stylesheets. */
+
+  /* If you're using a library like Bootstrap or other pre-defined CSS frameworks, 
+their rules might conflict with your custom styles. Adding !important ensures your
+ custom styles are applied. */
+  border-bottom: solid gray !important;
+}
+
+.nav-link {
+  font-weight: 300 !important;
+}
+
+.active {
+  border-bottom: 2px solid black;
+}
+
+.navbar-brand {
+  font-weight: 700;
+
+  font-family: "roboto", sans-serif;
+
+  letter-spacing: 3px;
+}
+
+.footer {
+  color: white;
+
+  padding: 25px;
+
+  background: black;
+
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+
+  background: linear-gradient(to right, #434343, #000000);
+}
+
+.footer a {
+  text-decoration: none;
+
+  color: white;
+
+  padding: 10px;
+}
+
+.footer a:hover {
+  color: #ffefba;
+  border-bottom: 1px solid #ffefba;
+}
+
+/* =================================
+======== page not found css ======= */
+.pnf {
+  display: flex;
+  min-height: 65vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnf-title {
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.pnf-heading {
+  font-weight: normal;
+}
+
+.pnf-btn {
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+.pnf-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* ========================================= */
+/* =========contact us ========= */
+.contactus {
+  margin: 0;
+  padding: 0;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*========================Registerpage and login page styling================*/
+
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  flex-direction: column;
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  margin-top: 20px;
+}
+
+.register form {
+  /* a shadow is given so that it can be differentiate from background */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px 90px;
+  background-color: #fff;
+}
+
+.register form .title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.register form input {
+  border: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+}
+
+.register form button {
+  border: 1px solid black;
+
+  border-radius: 0;
+
+  background-color: #000000;
+
+  color: white;
+  width: 250px;
+}
+
+/* product link style */
+
+.product-link {
+  text-decoration: none !important;
+  color: #000 !important;
+}
