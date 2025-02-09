@@ -6,15 +6,16 @@ import Spinner from "../Spinner";
 
 export default function AdminRoute() {
   // ok state as false using useState(false).
-   //auth state from useAuth(). This contains 
-   //the user's authentication details, such as user and token.
+  //auth state from useAuth(). This contains
+  //the user's authentication details, such as user and token.
   const [ok, setOk] = useState(false);
   const [auth, setAuth] = useAuth();
 
   useEffect(() => {
     const authCheck = async () => {
-        
-      const res = await axios.get("http://localhost:8080/api/v1/auth/admin-auth");
+      const res = await axios.get(
+        "https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/auth/admin-auth"
+      );
       if (res.data.ok) {
         setOk(true);
       } else {
@@ -23,6 +24,5 @@ export default function AdminRoute() {
     };
     if (auth?.token) authCheck();
   }, [auth?.token]);
-  return ok ? <Outlet /> : <Spinner path=""/>;
+  return ok ? <Outlet /> : <Spinner path="" />;
 }
-

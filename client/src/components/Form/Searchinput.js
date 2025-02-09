@@ -13,8 +13,10 @@ const Searchinput = () => {
     e.preventDefault();
 
     try {
+      // for localserver http://localhost:8080/api/v1/product/search/${values.keyword}
+      // but for live render url has to be used
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/search/${values.keyword}`
+        `https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/search/${values.keyword}`
       );
 
       setValues({ ...values, results: data });

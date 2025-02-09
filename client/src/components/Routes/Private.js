@@ -6,17 +6,19 @@ import Spinner from "../Spinner";
 
 export default function PrivateRoute() {
   // ok state as false using useState(false).
-   //auth state from useAuth(). This contains 
-   //the user's authentication details, such as user and token.
+  //auth state from useAuth(). This contains
+  //the user's authentication details, such as user and token.
   const [ok, setOk] = useState(false);
   const [auth, setAuth] = useAuth();
 
   useEffect(() => {
     const authCheck = async () => {
-        // Here user's token is get or read from this route 
-        //this route's end point /user-auth is hit into backend authroute and there after 
-        // passing middleware the response is getback into res variable 
-      const res = await axios.get("http://localhost:8080/api/v1/auth/user-auth");
+      // Here user's token is get or read from this route
+      //this route's end point /user-auth is hit into backend authroute and there after
+      // passing middleware the response is getback into res variable
+      const res = await axios.get(
+        "https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/auth/user-auth"
+      );
       if (res.data.ok) {
         setOk(true);
       } else {
@@ -25,13 +27,12 @@ export default function PrivateRoute() {
     };
     if (auth?.token) authCheck();
   }, [auth?.token]);
-// If ok === true: The <Outlet /> component is rendered, which
-// represents the child routes (protected content).
-//If ok === false: The <Spinner /> component is rendered, showing 
-//a loading spinner while the authentication check is happening.
+  // If ok === true: The <Outlet /> component is rendered, which
+  // represents the child routes (protected content).
+  //If ok === false: The <Spinner /> component is rendered, showing
+  //a loading spinner while the authentication check is happening.
   return ok ? <Outlet /> : <Spinner />;
 }
-
 
 /*
 1. Component Render (Initial Render):
