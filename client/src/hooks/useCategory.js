@@ -10,7 +10,7 @@ export default function useCategory() {
   const getCategories = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/category/get-all-category"
+        "https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/category/get-all-category"
       );
       setCategories(data?.category);
     } catch (error) {
