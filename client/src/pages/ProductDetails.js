@@ -22,8 +22,10 @@ const ProductDetails = () => {
   //getproduct
   const getProduct = async () => {
     try {
+      // when running on local machine
+      // `http://localhost:8080/api/v1/product/get-single-product/${params.slug}` but in case of render to become live
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/get-single-product/${params.slug}`
+        `https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/get-single-product/${params.slug}`
       );
       setProduct(data?.product);
       getSimilarProduct(data?.product._id, data?.product.category._id);
@@ -36,7 +38,7 @@ const ProductDetails = () => {
   const getSimilarProduct = async (pid, cid) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/related-product/${pid}/${cid}`
+        `https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/related-product/${pid}/${cid}`
       );
 
       setRelatedProduct(data?.products);
@@ -50,7 +52,7 @@ const ProductDetails = () => {
       <div className="row container mt-2">
         <div className="col-md-5">
           <img
-            src={`http://localhost:8080/api/v1/product/product-photo/${product._id}`}
+            src={`https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/product-photo/${product._id}`}
             className="card-img-top"
             alt={product.name}
             style={{ width: "300px", height: "300px" }}
@@ -88,7 +90,7 @@ const ProductDetails = () => {
                 // here ${p._id} is dynamically id is captured so dollar sign
                 //is used to get it.When the browser loads the image, it sends
                 //a GET request to the backend using this URL.
-                src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                src={`https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/product-photo/${p._id}`}
                 className="card-img-top"
                 alt={p.name}
               />

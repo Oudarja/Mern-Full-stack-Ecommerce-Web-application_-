@@ -11,7 +11,7 @@ const Orders = () => {
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/order/get-order/${auth?.user?._id}`
+        `https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/order/get-order/${auth?.user?._id}`
       );
 
       setOrders(data);

@@ -40,7 +40,7 @@ const Profile = () => {
     try {
       //api request handling
       const { data } = await axios.put(
-        "http://localhost:8080/api/v1/auth/profile",
+        "https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/auth/profile",
         { name, email, password, phone, address }
       );
       if (data?.error) {

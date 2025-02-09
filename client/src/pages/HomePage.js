@@ -40,7 +40,7 @@ const HomePage = () => {
   const getTotal = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/product/product-count"
+        "https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/product-count"
       );
       setTotal(data?.total);
     } catch (error) {
@@ -54,7 +54,7 @@ const HomePage = () => {
     try {
       //Fetches all categories from the backend.
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/category/get-all-category"
+        "https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/category/get-all-category"
       );
 
       if (data?.success) {
@@ -80,7 +80,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/product-list/${page}`
+        `https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/product-list/${page}`
       );
       setLoading(false);
       setProducts(data.products);
@@ -99,7 +99,7 @@ const HomePage = () => {
   const loadMore = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/product-list/${page}`
+        `https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/product-list/${page}`
       );
       setLoading(false);
       setProducts([...products, ...data?.products]);
@@ -148,7 +148,7 @@ Remove the ID (id) from the list
   const filterProduct = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/v1/product/product-filters",
+        "https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/product-filters",
         {
           checked,
           radio,
@@ -230,7 +230,8 @@ Remove the ID (id) from the list
                   // here ${p._id} is dynamically id is captured so dollar sign
                   //is used to get it.When the browser loads the image, it sends
                   //a GET request to the backend using this URL.
-                  src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                  // for localserver :   src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                  src={`https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
                   alt={p.name}
                 />

@@ -24,7 +24,7 @@ const AdminOrders = () => {
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/order/get-all-order/${auth?.user?._id}`
+        `https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/order/get-all-order/${auth?.user?._id}`
       );
 
       setOrders(data);
@@ -43,7 +43,7 @@ const AdminOrders = () => {
   const handleChange = async (orderId, value) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:8080/api/v1/order/order-status/${orderId}`,
+        `https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/order/order-status/${orderId}`,
         { status: value }
       );
       // call getOrders so that page gets updated

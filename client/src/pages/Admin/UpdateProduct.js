@@ -32,7 +32,7 @@ const UpdateProduct = () => {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product//get-single-product/${params.slug}`
+        `https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product//get-single-product/${params.slug}`
       );
       setName(data.product.name);
       setId(data.product._id);
@@ -56,7 +56,7 @@ const UpdateProduct = () => {
     try {
       //Fetches all categories from the backend.
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/category/get-all-category"
+        "https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/category/get-all-category"
       );
 
       if (data?.success) {
@@ -87,7 +87,7 @@ const UpdateProduct = () => {
       photo && productData.append("photo", photo);
       productData.append("category", category);
       const { data } = await axios.put(
-        `http://localhost:8080/api/v1/product/update-product/${id}`,
+        `https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/update-product/${id}`,
         productData
       );
       if (data?.success) {
@@ -107,7 +107,7 @@ const UpdateProduct = () => {
       if (!answer) return;
 
       const { data } = await axios.delete(
-        `http://localhost:8080/api/v1/product/product-delete/${id}`
+        `https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/product-delete/${id}`
       );
       toast.success(`Product deleted Successfully`);
       navigate(`/dashboard/admin/products`);
@@ -172,7 +172,7 @@ const UpdateProduct = () => {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`http://localhost:8080/api/v1/product/product-photo/${id}`}
+                      src={`https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/product-photo/${id}`}
                       alt="product_photo"
                       height={"200px"}
                       className="img img-responsive"

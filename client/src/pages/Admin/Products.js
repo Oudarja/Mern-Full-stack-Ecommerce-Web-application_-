@@ -14,7 +14,7 @@ const Products = () => {
   const getAllProducts = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8080/api/v1/product/get-product"
+        "https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/get-product"
       );
       setProducts(data.products);
     } catch (error) {
@@ -52,7 +52,7 @@ const Products = () => {
                     // here ${p._id} is dynamically id is captured so dollar sign
                     //is used to get it.When the browser loads the image, it sends
                     //a GET request to the backend using this URL.
-                    src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                    src={`https://mern-full-stack-ecommerce-web-application.onrender.com/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
                     alt={p.name}
                   />
