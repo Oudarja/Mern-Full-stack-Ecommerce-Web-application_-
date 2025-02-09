@@ -1,6 +1,6 @@
 import { hashPassword } from "./helpers/authHelper.js";
 import { comparePassword } from "./helpers/authHelper.js";
-import userModel from "../models/userModel.js";
+import userModel from "./models/userModel.js";
 import JWT from "jsonwebtoken";
 
 // asynchronous means that your program can
